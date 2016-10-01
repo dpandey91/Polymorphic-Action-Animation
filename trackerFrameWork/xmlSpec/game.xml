@@ -2,7 +2,7 @@
 <GameData>
 <!-- screenTitle is also used to identify you and your animation. 
      So make sure to include your name as part of the screenTitle -->
-<screenTitle>Dipika's Poke Animation</screenTitle>
+<screenTitle>Dipika's GOT Animation</screenTitle>
 <maxStringSize>50</maxStringSize>
 
 <frameCap>60</frameCap>
@@ -29,6 +29,48 @@
   <factor>1</factor>
   <transparency>false</transparency>
 </back>
+
+<sky>
+  <file>images/sky.png</file>
+  <factor>1</factor>
+  <transparency>false</transparency>
+</sky>
+
+<shady>
+  <file>images/shady.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>1</factor>
+  <transparency>true</transparency>
+</shady>
+
+<mountain>
+  <file>images/mountain.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>1</factor>
+  <transparency>true</transparency>
+</mountain>
+
+<grass>
+  <file>images/grass.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>1</factor>
+  <transparency>true</transparency>
+</grass>
+
+<tree>
+  <file>images/tree.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>1</factor>
+  <transparency>true</transparency>
+</tree>
 
 <font name="font">
   <file>font/dyslexic-bold.otf</file>

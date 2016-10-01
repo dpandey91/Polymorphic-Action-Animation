@@ -19,7 +19,11 @@ Manager::Manager() :
   io( IOManager::getInstance() ),
   clock( Clock::getInstance() ),
   screen( io.getScreen() ),
-  world("back", Gamedata::getInstance().getXmlInt("back/factor") ),
+  sky("sky", Gamedata::getInstance().getXmlInt("sky/factor") ),
+  mountain("mountain", Gamedata::getInstance().getXmlInt("mountain/factor") ),
+  shady("shady", Gamedata::getInstance().getXmlInt("shady/factor") ),
+  grass("grass", Gamedata::getInstance().getXmlInt("grass/factor") ),
+  tree("tree", Gamedata::getInstance().getXmlInt("tree/factor") ),
   viewport( Viewport::getInstance() ),
   sprites(),
   currentSprite(0),
@@ -42,7 +46,11 @@ Manager::Manager() :
 }
 
 void Manager::draw() const {
-  world.draw();
+  sky.draw();
+  mountain.draw();
+  shady.draw();
+  grass.draw();
+  tree.draw();
   for (unsigned i = 0; i < sprites.size(); ++i) {
     sprites[i]->draw();
   }
@@ -86,7 +94,12 @@ void Manager::update() {
   if ( makeVideo && frameCount < frameMax ) {
     makeFrame();
   }
-  world.update();
+  
+  sky.update();
+  mountain.update();
+  shady.update();
+  grass.update();
+  tree.update();
   viewport.update(); // always update viewport last
 }
 
