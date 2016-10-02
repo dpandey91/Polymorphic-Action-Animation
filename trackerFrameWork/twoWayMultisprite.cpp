@@ -33,7 +33,7 @@ TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
   worldHeight(WORLD_HEIGHT),
 
   currentFrame(0),
-  numberOfFrames( (Gamedata::getInstance().getXmlInt(name+"Right/xframes") * Gamedata::getInstance().getXmlInt(name+"Right/yframes")) + (Gamedata::                 getInstance().getXmlInt(name+"Left/xframes") * Gamedata::getInstance().getXmlInt(name+"Left/yframes"))),
+  numberOfFrames( Gamedata::getInstance().getXmlInt(name+"/xframes") * Gamedata::getInstance().getXmlInt(name+"/yframes") ),
   frameInterval( Gamedata::getInstance().getXmlInt(name+"/frameInterval") ),
   timeSinceLastFrame( 0 ),
   frameWidth(frames[0]->getWidth()),

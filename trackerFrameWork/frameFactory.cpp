@@ -103,9 +103,9 @@ std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name) {
 
   // It wasn't in the map, so we have to make the vector of Frames:
   SDL_Surface* rightSurface = IOManager::
-     getInstance().loadAndSet(gdata.getXmlStr(name+"Right/file"), true);
-  unsigned numberOfXFrames = gdata.getXmlInt(name+"Right/xframes");
-  unsigned numberOfYFrames = gdata.getXmlInt(name+"Right/yframes");
+     getInstance().loadAndSet(gdata.getXmlStr(name+"/fileRight"), true);
+  unsigned numberOfXFrames = gdata.getXmlInt(name+"/xframes");
+  unsigned numberOfYFrames = gdata.getXmlInt(name+"/yframes");
   std::vector<Frame*> frames;
   std::vector<SDL_Surface*> surfaces;
   frames.reserve(numberOfXFrames*numberOfYFrames);
@@ -128,9 +128,9 @@ std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name) {
   
     // It wasn't in the map, so we have to make the vector of Frames:
   SDL_Surface* leftSurface = IOManager::
-     getInstance().loadAndSet(gdata.getXmlStr(name+"Left/file"), true);
-  numberOfXFrames = gdata.getXmlInt(name+"Left/xframes");
-  numberOfYFrames = gdata.getXmlInt(name+"Left/yframes");
+     getInstance().loadAndSet(gdata.getXmlStr(name+"/fileLeft"), true);
+  numberOfXFrames = gdata.getXmlInt(name+"/xframes");
+  numberOfYFrames = gdata.getXmlInt(name+"/yframes");
   
   for (unsigned i = 0; i < numberOfYFrames; ++i) {
       for (unsigned j = 0; j < numberOfXFrames; ++j){
