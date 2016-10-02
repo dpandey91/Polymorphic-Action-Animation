@@ -6,7 +6,7 @@
 #include "parseXML.h"
 
 const int WORLD_WIDTH = 2000;
-const int WORLD_HEIGHT = 960;
+const int WORLD_HEIGHT = 480;
 
 class Gamedata {
 public:
