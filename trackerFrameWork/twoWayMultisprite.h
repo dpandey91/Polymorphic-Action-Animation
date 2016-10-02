@@ -1,5 +1,5 @@
-#ifndef MULTISPRITE__H
-#define MULTISPRITE__H
+#ifndef TWOWAYMULTISPRITE__H
+#define TWOWAYMULTISPRITE__H
 #include <string>
 #include <vector>
 #include "drawable.h"
