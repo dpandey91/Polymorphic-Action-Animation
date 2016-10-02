@@ -40,6 +40,7 @@ Manager::Manager() :
   SDL_WM_SetCaption(title.c_str(), NULL);
   atexit(SDL_Quit);
   sprites.push_back( new MultiSprite("pacman") );
+  sprites.push_back( new MultiSprite("runningman") );
   sprites.push_back( new Sprite("star") );
   sprites.push_back( new Sprite("greenorb") );
   viewport.setObjectToTrack(sprites[currentSprite]);
