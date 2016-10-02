@@ -17,8 +17,8 @@
 </view>
 
 <world>
-  <width>2000</width>
-  <height>960</height>
+  <width>1833</width>
+  <height>760</height>
 </world>
 
 <back>
@@ -31,44 +31,44 @@
 </back>
 
 <sky>
-  <file>images/sky.png</file>
+  <file>images/layer1.png</file>
   <factor>1</factor>
   <transparency>false</transparency>
 </sky>
 
 <shady>
-  <file>images/shady.png</file>
+  <file>images/layer3.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
-  <factor>1</factor>
+  <factor>3</factor>
   <transparency>true</transparency>
 </shady>
 
 <mountain>
-  <file>images/mountain.png</file>
+  <file>images/layer2.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
-  <factor>1</factor>
+  <factor>2</factor>
   <transparency>true</transparency>
 </mountain>
 
 <grass>
-  <file>images/grass.png</file>
+  <file>images/layer4.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
-  <factor>1</factor>
+  <factor>4</factor>
   <transparency>true</transparency>
 </grass>
 
 <tree>
-  <file>images/tree.png</file>
+  <file>images/layer5.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
-  <factor>1</factor>
+  <factor>5</factor>
   <transparency>true</transparency>
 </tree>
 
