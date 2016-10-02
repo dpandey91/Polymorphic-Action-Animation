@@ -99,6 +99,17 @@
   <transparency>true</transparency>
 </star>
 
+<pacman>
+  <file>images/pacman.png</file>
+  <startLoc x="0" y="240"/>
+  <xframes>5</xframes>
+  <yframes>4</yframes>
+  <frameInterval>20</frameInterval>
+  <speedX>-200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</pacman>
+
 <greenorb>
   <file>images/greenball.bmp</file>
   <startLoc x="320" y="240"/>
