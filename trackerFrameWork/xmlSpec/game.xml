@@ -126,8 +126,19 @@
   <transparency>true</transparency>
 </star>
 
-<pacman>
-  <file>images/pacmanSheet.png</file>
+<pacmanLeft>
+  <file>images/pacmanLeftSheet.png</file>
+  <startLoc x="854" y="240"/>
+  <xframes>1</xframes>
+  <yframes>20</yframes>
+  <frameInterval>20</frameInterval>
+  <speedX>-200</speedX>
+  <speedY>200</speedY>
+  <transparency>true</transparency>
+</pacmanLeft>
+
+<pacmanRight>
+  <file>images/pacmanRightSheet.png</file>
   <startLoc x="0" y="240"/>
   <xframes>1</xframes>
   <yframes>20</yframes>
@@ -135,7 +146,7 @@
   <speedX>-200</speedX>
   <speedY>200</speedY>
   <transparency>true</transparency>
-</pacman>
+</pacmanRight>
 
 <runningman>
   <file>images/runningManSheet.png</file>

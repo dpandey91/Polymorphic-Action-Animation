@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "multisprite.h"
+#include "twoWayMultisprite.h"
 #include "sprite.h"
 #include "gamedata.h"
 #include "manager.h"
@@ -42,8 +43,8 @@ Manager::Manager() :
   }
   SDL_WM_SetCaption(title.c_str(), NULL);
   atexit(SDL_Quit);
-  sprites.push_back( new MultiSprite("pacman") );
-  sprites.push_back( new MultiSprite("runningman") );
+  sprites.push_back( new TwoWayMultiSprite("pacman") );
+  //sprites.push_back( new MultiSprite("runningman") );
   sprites.push_back( new Sprite("star") );
   sprites.push_back( new Sprite("greenorb") );
   viewport.setObjectToTrack(sprites[currentSprite]);

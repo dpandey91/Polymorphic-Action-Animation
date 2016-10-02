@@ -92,3 +92,62 @@ std::vector<Frame*> FrameFactory::getFrames(const std::string& name) {
   multiFrames[name] = frames;
   return frames;
 }
+
+std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name) {
+  // First search map to see if we've already made it:
+  std::map<std::string, std::vector<Frame*> >::const_iterator 
+    pos = multiFrames.find(name); 
+  if ( pos != multiFrames.end() ) {
+    return pos->second;
+  }
+
+  // It wasn't in the map, so we have to make the vector of Frames:
+  SDL_Surface* rightSurface = IOManager::
+     getInstance().loadAndSet(gdata.getXmlStr(name+"Right/file"), true);
+  unsigned numberOfXFrames = gdata.getXmlInt(name+"Right/xframes");
+  unsigned numberOfYFrames = gdata.getXmlInt(name+"Right/yframes");
+  std::vector<Frame*> frames;
+  std::vector<SDL_Surface*> surfaces;
+  frames.reserve(numberOfXFrames*numberOfYFrames);
+
+  Uint16 width = rightSurface->w/numberOfXFrames;
+  Uint16 height = rightSurface->h/numberOfYFrames;;
+
+  SDL_Surface* surf;
+  for (unsigned i = 0; i < numberOfYFrames; ++i) {
+      for (unsigned j = 0; j < numberOfXFrames; ++j){
+                 
+        unsigned frameY = i * height;
+        unsigned frameX = j * width;
+        surf = ExtractSurface::getInstance().
+               get(rightSurface, width, height, frameX, frameY); 
+        surfaces.push_back( surf );
+        frames.push_back( new Frame(surf) );
+    } 
+  }
+  
+    // It wasn't in the map, so we have to make the vector of Frames:
+  SDL_Surface* leftSurface = IOManager::
+     getInstance().loadAndSet(gdata.getXmlStr(name+"Left/file"), true);
+  numberOfXFrames = gdata.getXmlInt(name+"Left/xframes");
+  numberOfYFrames = gdata.getXmlInt(name+"Left/yframes");
+  
+  for (unsigned i = 0; i < numberOfYFrames; ++i) {
+      for (unsigned j = 0; j < numberOfXFrames; ++j){
+                 
+        unsigned frameY = i * height;
+        unsigned frameX = j * width;
+        surf = ExtractSurface::getInstance().
+               get(leftSurface, width, height, frameX, frameY); 
+        surfaces.push_back( surf );
+        frames.push_back( new Frame(surf) );
+    } 
+  }
+  
+  
+  SDL_FreeSurface(rightSurface);
+  SDL_FreeSurface(leftSurface);
+  multiSurfaces[name] = surfaces;
+  multiFrames[name] = frames;
+  return frames;
+}
