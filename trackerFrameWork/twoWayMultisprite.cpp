@@ -28,7 +28,7 @@ TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
            Vector2f(Gamedata::getInstance().getXmlInt(name+"/speedX"),
                     Gamedata::getInstance().getXmlInt(name+"/speedY"))
            ),
-  frames( FrameFactory::getInstance().getFrames(name) ),
+  frames( FrameFactory::getInstance().getTwoWayFrames(name) ),
   worldWidth(WORLD_WIDTH),
   worldHeight(WORLD_HEIGHT),
 
