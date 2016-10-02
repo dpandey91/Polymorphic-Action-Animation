@@ -22,7 +22,7 @@ MultiSprite::MultiSprite( const std::string& name) :
   worldHeight(WORLD_HEIGHT),
 
   currentFrame(0),
-  numberOfFrames( Gamedata::getInstance().getXmlInt(name+"/frames") ),
+  numberOfFrames( Gamedata::getInstance().getXmlInt(name+"/xframes") * Gamedata::getInstance().getXmlInt(name+"/yframes") ),
   frameInterval( Gamedata::getInstance().getXmlInt(name+"/frameInterval") ),
   timeSinceLastFrame( 0 ),
   frameWidth(frames[0]->getWidth()),
