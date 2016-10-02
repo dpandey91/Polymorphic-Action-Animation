@@ -70,7 +70,7 @@ std::vector<Frame*> FrameFactory::getFrames(const std::string& name) {
   unsigned numberOfYFrames = gdata.getXmlInt(name+"/yframes");
   std::vector<Frame*> frames;
   std::vector<SDL_Surface*> surfaces;
-  frames.reserve(numberOfFrames);
+  frames.reserve(numberOfXFrames*numberOfYFrames);
 
   Uint16 width = surface->w/numberOfXFrames;
   Uint16 height = surface->h/numberOfYFrames;;

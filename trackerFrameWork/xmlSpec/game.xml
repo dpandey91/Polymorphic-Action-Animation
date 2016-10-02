@@ -100,7 +100,7 @@
 </star>
 
 <pacman>
-  <file>images/pacman.png</file>
+  <file>images/pacmanSheet.png</file>
   <startLoc x="0" y="240"/>
   <xframes>5</xframes>
   <yframes>4</yframes>
