@@ -18,11 +18,14 @@ private:
   Clock* clock;
 
   SDL_Surface * const screen;
-  World sky;
-  World mountain;
-  World shady;
-  World grass;
-  World tree;
+  World layer1;
+  World layer2;
+  World layer3;
+  World layer4;
+  World layer5;
+  World layer6;
+  World layer7;
+  World layer8;
   Viewport& viewport;
 
   std::vector<Drawable*> sprites;

@@ -30,47 +30,74 @@
   <transparency>false</transparency>
 </back>
 
-<sky>
+<layer1>
   <file>images/layer1.png</file>
   <factor>1</factor>
   <transparency>false</transparency>
-</sky>
+</layer1>
 
-<shady>
-  <file>images/layer3.png</file>
-  <red>0</red>
-  <green>0</green>
-  <blue>0</blue>
-  <factor>3</factor>
-  <transparency>true</transparency>
-</shady>
-
-<mountain>
+<layer2>
   <file>images/layer2.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
   <factor>2</factor>
   <transparency>true</transparency>
-</mountain>
+</layer2>
 
-<grass>
+<layer3>
+  <file>images/layer3.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>3</factor>
+  <transparency>true</transparency>
+</layer3>
+
+<layer4>
   <file>images/layer4.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
   <factor>4</factor>
   <transparency>true</transparency>
-</grass>
+</layer4>
 
-<tree>
+<layer5>
   <file>images/layer5.png</file>
   <red>0</red>
   <green>0</green>
   <blue>0</blue>
   <factor>5</factor>
   <transparency>true</transparency>
-</tree>
+</layer5>
+
+<layer6>
+  <file>images/layer6.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>6</factor>
+  <transparency>true</transparency>
+</layer6>
+
+<layer7>
+  <file>images/layer7.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>7</factor>
+  <transparency>true</transparency>
+</layer7>
+
+<layer8>
+  <file>images/layer8.png</file>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <factor>8</factor>
+  <transparency>true</transparency>
+</layer8>
 
 <font name="font">
   <file>font/dyslexic-bold.otf</file>
@@ -102,8 +129,8 @@
 <pacman>
   <file>images/pacmanSheet.png</file>
   <startLoc x="0" y="240"/>
-  <xframes>5</xframes>
-  <yframes>4</yframes>
+  <xframes>1</xframes>
+  <yframes>20</yframes>
   <frameInterval>20</frameInterval>
   <speedX>-200</speedX>
   <speedY>200</speedY>
@@ -113,8 +140,8 @@
 <runningman>
   <file>images/runningManSheet.png</file>
   <startLoc x="0" y="240"/>
-  <xframes>3</xframes>
-  <yframes>3</yframes>
+  <xframes>1</xframes>
+  <yframes>6</yframes>
   <frameInterval>20</frameInterval>
   <speedX>-200</speedX>
   <speedY>0</speedY>

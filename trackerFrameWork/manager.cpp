@@ -19,11 +19,14 @@ Manager::Manager() :
   io( IOManager::getInstance() ),
   clock( Clock::getInstance() ),
   screen( io.getScreen() ),
-  sky("sky", Gamedata::getInstance().getXmlInt("sky/factor") ),
-  mountain("mountain", Gamedata::getInstance().getXmlInt("mountain/factor") ),
-  shady("shady", Gamedata::getInstance().getXmlInt("shady/factor") ),
-  grass("grass", Gamedata::getInstance().getXmlInt("grass/factor") ),
-  tree("tree", Gamedata::getInstance().getXmlInt("tree/factor") ),
+  layer1("layer1", Gamedata::getInstance().getXmlInt("layer1/factor") ),
+  layer2("layer2", Gamedata::getInstance().getXmlInt("layer2/factor") ),
+  layer3("layer3", Gamedata::getInstance().getXmlInt("layer3/factor") ),
+  layer4("layer4", Gamedata::getInstance().getXmlInt("layer4/factor") ),
+  layer5("layer5", Gamedata::getInstance().getXmlInt("layer5/factor") ),
+  layer6("layer6", Gamedata::getInstance().getXmlInt("layer6/factor") ),
+  layer7("layer7", Gamedata::getInstance().getXmlInt("layer7/factor") ),
+  layer8("layer8", Gamedata::getInstance().getXmlInt("layer8/factor") ),
   viewport( Viewport::getInstance() ),
   sprites(),
   currentSprite(0),
@@ -47,11 +50,14 @@ Manager::Manager() :
 }
 
 void Manager::draw() const {
-  sky.draw();
-  mountain.draw();
-  shady.draw();
-  grass.draw();
-  tree.draw();
+  layer1.draw();
+  layer2.draw();
+  layer3.draw();
+  layer4.draw();
+  layer5.draw();
+  layer6.draw();
+  layer7.draw();
+  layer8.draw();
   for (unsigned i = 0; i < sprites.size(); ++i) {
     sprites[i]->draw();
   }
@@ -96,11 +102,14 @@ void Manager::update() {
     makeFrame();
   }
   
-  sky.update();
-  mountain.update();
-  shady.update();
-  grass.update();
-  tree.update();
+  layer1.update();
+  layer2.update();
+  layer3.update();
+  layer4.update();
+  layer5.update();
+  layer6.update();
+  layer7.update();
+  layer8.update();
   viewport.update(); // always update viewport last
 }
 
