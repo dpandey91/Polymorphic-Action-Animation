@@ -5,7 +5,7 @@
 #include "vector2f.h"
 #include "parseXML.h"
 
-const int WORLD_WIDTH = 2000;
+const int WORLD_WIDTH = 1800;
 const int WORLD_HEIGHT = 480;
 
 class Gamedata {

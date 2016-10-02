@@ -38,7 +38,7 @@ public:
   // width and height will be obtained from the XML:
   std::vector<Frame*> getFrames(const std::string&);
 
-  std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name);
+  std::vector<Frame*> getTwoWayFrames(const std::string& name);
   
 private:
   const Gamedata& gdata;
