@@ -11,6 +11,8 @@
 <frameMax>200</frameMax>
 <username>dpandey</username>
 
+<frameRateAvg>200</frameRateAvg>
+
 <view>
   <width>854</width>
   <height>480</height>
