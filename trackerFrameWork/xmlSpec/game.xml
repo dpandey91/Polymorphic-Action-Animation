@@ -31,7 +31,7 @@
 </back>
 
 <layer1>
-  <file>images/layer1.png</file>
+  <file>images/sky.png</file>
   <factor>1</factor>
   <transparency>false</transparency>
 </layer1>

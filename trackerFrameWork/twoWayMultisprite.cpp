@@ -5,15 +5,16 @@
 void TwoWayMultiSprite::advanceFrame(Uint32 ticks) {
 	timeSinceLastFrame += ticks;
 	if (timeSinceLastFrame > frameInterval) {
-        
+//        std::cout << "Velocity X: " << velocityX() << " Current: " << currentFrame << std::endl;        
         if(velocityX() >= 0){
             currentFrame = (currentFrame+1) % (numberOfFrames/2);
         }
         else {
-            if(currentFrame >= numberOfFrames/2){
-                currentFrame = (currentFrame+1) % numberOfFrames;
+            if(currentFrame > numberOfFrames/2){
+                currentFrame =  (currentFrame+1) % numberOfFrames;
             }
-            else{
+
+            if(currentFrame < numberOfFrames/2){
                 currentFrame = (currentFrame + (numberOfFrames/2) + 1) % numberOfFrames;
             }
         }
@@ -33,7 +34,7 @@ TwoWayMultiSprite::TwoWayMultiSprite( const std::string& name) :
   worldHeight(WORLD_HEIGHT),
 
   currentFrame(0),
-  numberOfFrames( Gamedata::getInstance().getXmlInt(name+"/xframes") * Gamedata::getInstance().getXmlInt(name+"/yframes") ),
+  numberOfFrames( Gamedata::getInstance().getXmlInt(name+"/xframes") * Gamedata::getInstance().getXmlInt(name+"/yframes") * 2 ),
   frameInterval( Gamedata::getInstance().getXmlInt(name+"/frameInterval") ),
   timeSinceLastFrame( 0 ),
   frameWidth(frames[0]->getWidth()),

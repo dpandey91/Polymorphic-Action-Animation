@@ -108,10 +108,10 @@ std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name) {
   unsigned numberOfYFrames = gdata.getXmlInt(name+"/yframes");
   std::vector<Frame*> frames;
   std::vector<SDL_Surface*> surfaces;
-  frames.reserve(numberOfXFrames*numberOfYFrames);
+  frames.reserve(numberOfXFrames*numberOfYFrames*2);
 
   Uint16 width = rightSurface->w/numberOfXFrames;
-  Uint16 height = rightSurface->h/numberOfYFrames;;
+  Uint16 height = rightSurface->h/numberOfYFrames;
 
   SDL_Surface* surf;
   for (unsigned i = 0; i < numberOfYFrames; ++i) {
@@ -129,16 +129,17 @@ std::vector<Frame*> FrameFactory::getTwoWayFrames(const std::string& name) {
     // It wasn't in the map, so we have to make the vector of Frames:
   SDL_Surface* leftSurface = IOManager::
      getInstance().loadAndSet(gdata.getXmlStr(name+"/fileLeft"), true);
-  numberOfXFrames = gdata.getXmlInt(name+"/xframes");
-  numberOfYFrames = gdata.getXmlInt(name+"/yframes");
   
+  Uint16 width1 = leftSurface->w/numberOfXFrames;
+  Uint16 height1 = leftSurface->h/numberOfYFrames;
+
   for (unsigned i = 0; i < numberOfYFrames; ++i) {
       for (unsigned j = 0; j < numberOfXFrames; ++j){
                  
-        unsigned frameY = i * height;
-        unsigned frameX = j * width;
+        unsigned frameY = i * height1;
+        unsigned frameX = j * width1;
         surf = ExtractSurface::getInstance().
-               get(leftSurface, width, height, frameX, frameY); 
+               get(leftSurface, width1, height1, frameX, frameY); 
         surfaces.push_back( surf );
         frames.push_back( new Frame(surf) );
     } 

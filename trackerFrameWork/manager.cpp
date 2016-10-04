@@ -44,7 +44,7 @@ Manager::Manager() :
   SDL_WM_SetCaption(title.c_str(), NULL);
   atexit(SDL_Quit);
   //sprites.push_back( new TwoWayMultiSprite("pacman") );
-  sprites.push_back( new MultiSprite("runningman") );
+  sprites.push_back( new TwoWayMultiSprite("runningman") );
   sprites.push_back( new Sprite("star") );
   sprites.push_back( new Sprite("greenorb") );
   viewport.setObjectToTrack(sprites[currentSprite]);
@@ -53,12 +53,12 @@ Manager::Manager() :
 void Manager::draw() const {
   layer1.draw();
   layer2.draw();
-  layer3.draw();
+//  layer3.draw();
   layer4.draw();
-  layer5.draw();
+//  layer5.draw();
   layer6.draw();
-  layer7.draw();
-  layer8.draw();
+  //layer7.draw();
+//  layer8.draw();
   for (unsigned i = 0; i < sprites.size(); ++i) {
     sprites[i]->draw();
   }
@@ -105,12 +105,12 @@ void Manager::update() {
   
   layer1.update();
   layer2.update();
-  layer3.update();
+//  layer3.update();
   layer4.update();
-  layer5.update();
+ // layer5.update();
   layer6.update();
-  layer7.update();
-  layer8.update();
+//  layer7.update();
+  //layer8.update();
   viewport.update(); // always update viewport last
 }
 
