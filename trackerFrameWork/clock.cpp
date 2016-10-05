@@ -25,8 +25,8 @@ Clock::Clock() :
   sumOfAllTicks(0),
   timeAtStart(0), timeAtPause(0),
   currTicks(0), prevTicks(0), ticks(0),
-  frameRateCap(Gamedata::getInstance().getXmlBool("frameRateAvg")),
-  sumAvg(0.0),
+  frameRateCap(Gamedata::getInstance().getXmlInt("frameRateAvg")),
+  sumAvg(0),
   fpsQue()
 {
   start();
@@ -106,10 +106,13 @@ unsigned int Clock::capFrameRate() const {
 Clock& Clock::operator++() { 
   if ( !paused ) {
     ++frames;
-    
-    float frame_rate = frames/getSeconds;
+
+    std::cout << "elapsedSec: " << std::endl;
+    unsigned int elapsedSec = getSeconds();
+    std::cout << "elapsedSec: " << elapsedSec << std::endl;   
+    unsigned int frame_rate = elapsedSec > 0 ? frames/elapsedSec : 0;
     if(fpsQue.size() == frameRateCap){
-        float lastVal = fpsQue.back();
+        unsigned int lastVal = fpsQue.back();
         sumAvg -= lastVal;
         fpsQue.pop_back();
     }
@@ -139,7 +142,9 @@ void Clock::unpause() {
   }
 }
 
-float Clock::getAvgFrameRate() const{
+unsigned int Clock::getAvgFrameRate() const{
+
+    std::cout << "frameRateCap: " << frameRateCap << std::endl;
     return sumAvg/frameRateCap;
 }
 

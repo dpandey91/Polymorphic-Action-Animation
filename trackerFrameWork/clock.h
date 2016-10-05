@@ -9,7 +9,7 @@ public:
   static Clock* getInstance();
   unsigned int getTicks() const;
   unsigned int getTotalTicks() const { return sumOfAllTicks; }
-  float getAvgFrameRate const();
+  unsigned int getAvgFrameRate() const;
 
 private:
   friend class Manager;
@@ -31,8 +31,9 @@ private:
   unsigned int prevTicks;
   unsigned int ticks;
 
-  float sumAvg;
-  deque<float> fpsQue;
+  unsigned int frameRateCap;
+  unsigned int sumAvg;
+  std::deque<unsigned int> fpsQue;
   
   unsigned int getElapsedTicks();
   Clock& operator++();
